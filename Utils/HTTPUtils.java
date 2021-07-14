@@ -15,10 +15,10 @@ import org.json.JSONObject;
 public class HTTPUtils 
 {
 
-    public static String getResponse(String requestName) throws JSONException, IOException
+    public static String getResponse(String requestName, String configFile) throws JSONException, IOException
     {
         String            result     = "";
-        JSONObject        gitLabInfo = FileUtils.getJSONObjectFile("config/GitLabRequest.json");
+        JSONObject        gitLabInfo = FileUtils.getJSONObjectFile(configFile);
         URL               url        = new URL(gitLabInfo.getString(requestName));
         HttpURLConnection http       = (HttpURLConnection) url.openConnection();
 
