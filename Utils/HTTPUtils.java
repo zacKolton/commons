@@ -40,7 +40,7 @@ public class HTTPUtils
 
     }
 
-    private static void setRequestProperties(HttpURLConnection http, JSONArray props)
+    public static void setRequestProperties(HttpURLConnection http, JSONArray props)
     {
         for(int i = 0; i < props.length(); i++)
         {
