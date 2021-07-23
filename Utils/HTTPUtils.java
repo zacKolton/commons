@@ -62,21 +62,3 @@ public class HTTPUtils
     }
     
 }
-
-/*
-    private static JSONObject getRequest(JSONObject userInfo, String requestName)
-    {
-        JSONObject result = null;
-        boolean done = false;
-        for(int i = 0; (!done) && (i < userInfo.getJSONArray("props").length()); i++)
-        {
-            String tempName = userInfo.getJSONArray("requests").getJSONObject(i).getString("name");
-            if(tempName.equals(requestName))
-            {
-                done = true;
-                result = userInfo.getJSONArray("requests").getJSONObject(i);
-            }
-        }
-        return result;
-    }
-*/
