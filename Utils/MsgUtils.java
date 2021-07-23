@@ -1,4 +1,4 @@
-package Utils;
+package commons.Utils;
 
 public class MsgUtils 
 {
