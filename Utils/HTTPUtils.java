@@ -26,13 +26,13 @@ public class HTTPUtils
 
         if(http.getResponseCode() == 200)
         {
-            MsgUtils.message(requestName+ "\trequest was successful!");
             BufferedReader rd = new BufferedReader(new InputStreamReader(http.getInputStream(), "UTF-8"));
             result = rd.lines().collect(Collectors.joining());
+            MsgUtils.message(requestName+ " request was successful for "+url.toString());
         }
         else
         {
-            MsgUtils.error(requestName+ "\trequest failed");
+            MsgUtils.error(requestName+ " request failed");
         }
         http.disconnect();
         
