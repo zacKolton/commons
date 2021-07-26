@@ -1,5 +1,9 @@
 package commons.Utils;
 
+import java.util.ArrayList;
+
+import projectSpecific.ParsedObjects.MergeRequest;
+
 public class MDUtils
 {
     // Type can be 
@@ -16,6 +20,12 @@ public class MDUtils
             result = indent+" <div align="+ch+position+ch+" >"+title+"</div>";
         }
         return result;
+    }
+
+    public static String table(ArrayList<MergeRequest> mergeRequests)
+    {
+        
+        return null;
     }
 
     public static String link(String s, String link) { return "["+s+"]("+link+")"; }
