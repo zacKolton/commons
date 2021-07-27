@@ -2,6 +2,9 @@ package commons.Utils;
 
 import java.util.ArrayList;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import projectSpecific.ParsedObjects.MergeRequest;
 
 public class MDUtils
@@ -22,9 +25,21 @@ public class MDUtils
         return result;
     }
 
-    public static String table(ArrayList<MergeRequest> mergeRequests)
+    public static String table(ArrayList<MergeRequest> mergeRequests, JSONObject tableConfig)
     {
-        
+        String headerField = "";
+        String rowField    = "";
+        String divide      = " :----: ";
+        String col         = "|";
+
+        JSONObject headers = tableConfig.getJSONObject("headers");
+        JSONObject rowData = tableConfig.getJSONObject("row-data");
+
+        JSONArray test = headers.names();
+
+        System.out.println(test.toString(4));
+
+        // needs to be tested yet and completed
         return null;
     }
 
