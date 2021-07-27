@@ -25,19 +25,30 @@ public class MDUtils
         return result;
     }
 
+    // The input names should be updated here for future projects
+    // It would be cool if you could center the text between | ... |
     public static String table(ArrayList<MergeRequest> mergeRequests, JSONObject tableConfig)
     {
-        String headerField = "";
-        String rowField    = "";
-        String divide      = " :----: ";
+        String headerField = "|";
+        String divideField = "|";
+        String rowField    = "|";
+        String divide      = ":----:";
         String col         = "|";
 
-        JSONObject headers = tableConfig.getJSONObject("headers");
-        JSONObject rowData = tableConfig.getJSONObject("row-data");
+        JSONArray headers = tableConfig.getJSONArray("headers");
+        JSONArray rowData = tableConfig.getJSONArray("row-data");
 
-        JSONArray test = headers.names();
+        for(int i = 0; i < headers.length(); i++)
+        {
+            String    headerKey     = headers.getJSONObject(i).getString("key");
+                      headerField  += " "+ headers.getJSONObject(i).getString("text") + " |";
+                      divideField  += " "+divide+" |";
+        }
 
-        System.out.println(test.toString(4));
+        for(int i = 0; i < rowData.length(); i++)
+        {
+            
+        }
 
         // needs to be tested yet and completed
         return null;
